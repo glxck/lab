@@ -14,25 +14,53 @@ char *get_animal_type_name(enum animal_type type)
 	char *result;
 	switch (type) {
 	case CAT:
-		result = "Кіт";
+		result = "Cat";
 		break;
 	case DOG:
-		result = "Собака";
+		result = "Dog";
 		break;
 	case COW:
-		result = "Корова";
+		result = "Cow";
 		break;
 	case PIG:
-		result = "Свиня";
+		result = "Pig";
 		break;
+	case HUMAN:
+	    result = "Hello, world!";
+	    break;
 	default:
 		result = "N/A";
 	}
 	return result;
 }
 
+char *get_sound_type(enum sound_type type) {
+    char *result;
+    switch (type) {
+    case catSound:
+        result = "meow";
+        break;
+    case dogSound:
+        result = "gav";
+        break;
+    case cowSound:
+        result = "moo";
+        break;
+    case pigSound:
+        result = "HTML is programming language";
+        break;
+     case humanSound:
+        result = "C is alive";
+        break;
+    default:
+        result = "N/A";
+    }
+    return result;
+}
+
 void generate_animal(struct animal *entity)
 {
+    entity->sound = (unsigned  int)rand() % INT8_MAX;
 	entity->height = (unsigned int)rand() % INT8_MAX;
 	entity->weight = (unsigned int)rand() % INT8_MAX;
 	entity->type = (unsigned int)rand() % ANIMAL_TYPE_COUNT;

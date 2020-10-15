@@ -29,7 +29,17 @@ enum animal_type {
 	COW, /**< Корова */
 	DOG, /**< Собака */
 	CAT, /**< Кіт */
+	HUMAN,
 	ANIMAL_TYPE_COUNT /**< Кількість тварин */
+};
+
+enum sound_type {
+    catSound,
+    dogSound,
+    cowSound,
+    pigSound,
+    humanSound,
+    soundTypeCount
 };
 
 /**
@@ -37,6 +47,7 @@ enum animal_type {
  */
 struct animal {
 	enum animal_type type; /**< тип тварини */
+    enum sound_type sound;
 	unsigned int height; /**< ріст тварини, см */
 	unsigned int weight; /**< маса тварини, грам */
 };
